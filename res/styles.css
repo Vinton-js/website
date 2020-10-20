@@ -35,6 +35,11 @@ h2 {
 h3 {
     font-size: 28px;
     padding-left: 3em;
+    padding-top: 1em;
+}
+p {
+    margin: 0;
+    padding: 1em;
 }
 
 .cli {
@@ -96,7 +101,7 @@ kbd:before {
         font-size: 74px;
     }
     h3 {
-        padding: 0 1em;
+        padding-left: 1em;
     }
 }
 @media (max-width: 500px){
