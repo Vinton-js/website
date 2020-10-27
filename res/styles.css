@@ -2,12 +2,13 @@
 
 :root{
     --grey: #181818;
+    --light-grey: #ccc;
 }
 
 body {
     margin: 0;
     color: var(--grey);
-    font-family: serif;
+    font-family: "Fira Mono", monospace;
 }
 h1, h2, h3 {
     margin: 0;
@@ -22,10 +23,30 @@ header {
     padding: 15px;
 }
 header, #titles {
+    flex: 1 0 1px;
     padding-left: 50px;
 }
+
+#enterprise {
+    flex: 1 0 1px;
+    text-align: center;
+}
+#enterprise a {
+    display: inline-block;
+    background-color: var(--light-grey);
+    border: none;
+    color: #000;
+    text-decoration: none;
+    line-height: 4em;
+    padding: 0 2em;
+    margin: .5em 0;
+    white-space: nowrap;
+}
+#enterprise a:hover {
+    text-decoration: underline;
+}
+
 h1 {
-    font-family: "Fira Mono", monospace;
     font-size: 96px;
 }
 h2 {
@@ -40,6 +61,7 @@ h3 {
 p {
     margin: 0;
     padding: 1em;
+    max-width: 80ch;
 }
 
 .cli {
@@ -69,7 +91,7 @@ kbd:before {
     right: 0;
 }
 .github-corner > svg {
-    fill: #fff;
+    fill: var(--light-grey);
     color: var(--grey);
 }
 .github-corner .octo-arm {
@@ -90,9 +112,12 @@ kbd:before {
     }
 }
 
-@media (max-width: 790px){
+@media (max-width: 1200px){
     header, #titles {
         padding-left: 30px;
+    }
+    #enterprise {
+        padding-right: 30px;
     }
     header img {
         height: 200px;
@@ -104,12 +129,20 @@ kbd:before {
         padding-left: 1em;
     }
 }
-@media (max-width: 500px){
+@media (max-width: 730px){
     header, #titles {
         padding-left: 15px;
     }
     header img {
         height: 100px;
+    }
+    #enterprise {
+        padding-right: 40px;
+    }
+    #enterprise a {
+        line-height: 3em;
+        padding: 0 1em;
+        margin: .25em 0;
     }
     h1 {
         font-size: 52px;
@@ -121,10 +154,15 @@ kbd:before {
         animation: octocat-wave 560ms ease-in-out;
     }
 }
-@media (max-width: 310px){
-    header img {
-        display: none;
+@media (max-width: 540px){
+    header {
+        flex-direction: column;
     }
+    #enterprise {
+        padding: 15px 0 0 0;
+    }
+}
+@media (max-width: 310px){
     #titles {
         padding-left: 0;
     }
